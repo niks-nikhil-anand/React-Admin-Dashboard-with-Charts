@@ -54,7 +54,7 @@
 }
 
 //square
-@mixin PosCenter($s : 1rem){
+@mixin Square($s : 1rem){
    height: $s;
    width: $s;
 }
