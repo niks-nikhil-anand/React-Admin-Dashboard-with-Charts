@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import  { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Loader from './component/Loader.tsx';
 
-function App() {
-  const [count, setCount] = useState(0)
+const Dashboard = lazy(() => import("./pages/Dashboard.tsx"));
+const Product = lazy(() => import("./pages/Product.tsx"));
+const Transaction = lazy(() => import("./pages/Transaction.tsx"));
+const Customer = lazy(() => import("./pages/Customer.tsx"));
 
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      <Suspense fallback={<Loader/>}>
+        <Routes>
+          <Route path='/admin/dashboard' element={<Dashboard />} />
+          <Route path='/admin/product' element={<Product />} />
+          <Route path='/admin/customer' element={<Customer />} />
+          <Route path='/admin/transaction' element={<Transaction />} />   
+
+
+          {/* Charts*/}
+
+
+
+          {/* Apps*/}
+
+
+        </Routes>
+      </Suspense>
+    </Router>
+  );
 }
 
-export default App
+export default App;
