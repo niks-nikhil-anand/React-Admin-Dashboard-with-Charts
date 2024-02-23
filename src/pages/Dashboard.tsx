@@ -2,6 +2,7 @@ import AdminSideBar from "../component/AdminSideBar"
 import { FaSearch , FaBell} from "react-icons/fa";
 import userImg from '../assets/person.png'
 import { IoMdTrendingUp , IoMdTrendingDown} from "react-icons/io";
+import data from '../assets/data.json'
 
 
 const dashboard = () => {
@@ -53,6 +54,34 @@ const dashboard = () => {
          />
 
          </section>
+
+                  {/*------ Widget section ends here----  */}
+
+
+
+          {/*------ Graph section starts from here----  */}
+
+          <section className="graphContainer">
+             <div className="revenueCharts">
+                <h2>Revenue Transaction</h2>
+                {/* Graph  */}
+              </div>
+              <div className="dashboardCategories">
+                <h2>Inventory</h2>
+                { data.categories.map((i) => (
+                   <CategoryItems
+                   key = {i.heading}  
+                heading= {i.heading}
+                value= {i.value}
+                color= {`hsl(${i.value*10},100%,50%)`}
+                />
+                ))}
+              </div>
+  
+          </section>
+
+          {/*------ Graph section ends here----  */}
+
 
 
 
@@ -107,6 +136,29 @@ const WidgetItem = ({
     </div>
 
   </article>
+)
+
+
+// Graph section - Inventory section 
+interface CategoryItemsProps {
+  color : string ;
+  value : number ;
+  heading : string
+}
+
+const CategoryItems = ({color , value , heading}:CategoryItemsProps) => (
+  <div className="categoryItem">
+    <h5>{heading}</h5>
+    <div>
+      <div style={{
+        backgroundColor : color ,
+        width : `${value}%`
+      }}
+      ></div>
+    </div>
+      <span>{value}%</span>
+
+  </div>
 )
 
 export default dashboard
