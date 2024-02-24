@@ -3,6 +3,7 @@ import { FaSearch , FaBell} from "react-icons/fa";
 import userImg from '../assets/person.png'
 import { IoMdTrendingUp , IoMdTrendingDown} from "react-icons/io";
 import data from '../assets/data.json'
+import { BarChart } from "../component/Charts";
 
 
 const dashboard = () => {
@@ -65,6 +66,15 @@ const dashboard = () => {
              <div className="revenueCharts">
                 <h2>Revenue Transaction</h2>
                 {/* Graph  */}
+                <BarChart 
+                data_2={[757 , 424 , 424 , 464 , 854 , 785 , 753 ]}
+                data_1={[300 , 144 , 493 , 566 , 345 , 542 , 342 ]}
+                title_1="Revenue"
+                title_2="Transactions"
+                bgColor_1="rgb(0 ,115 ,255)"
+                bgColor_2="rgba(53 ,162 , 235 ,0.8)"
+                />
+
               </div>
               <div className="dashboardCategories">
                 <h2>Inventory</h2>

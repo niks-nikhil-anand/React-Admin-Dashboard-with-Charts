@@ -52,10 +52,24 @@ export const BarChart = ({
             display : false
           },
           title: {
-            display: true,
+            display: false,
             text: 'Chart.js Bar Chart',
           },
         },
+        scales :{
+            y : {
+                beginAtZero : true ,
+                grid : {
+                    display : false
+                }
+            } ,
+            x : {
+                
+                grid : {
+                    display : false
+                }
+            }
+        }
       };
       
       
@@ -66,11 +80,18 @@ export const BarChart = ({
             label: title_1,
             data: data_1,
             backgroundColor: bgColor_1,
+            barThickness : "flex" ,
+            barPercentage : 1 ,
+            categoryPercentage : 0.4
+
           },
           {
             label: title_2,
             data: data_2 ,
             backgroundColor: bgColor_2,
+            barThickness : "flex" ,
+            barPercentage : 1 ,
+            categoryPercentage : 0.4
           },
         ],
       };
