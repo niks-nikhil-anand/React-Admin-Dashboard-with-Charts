@@ -46,7 +46,7 @@ function TableHOC <T extends Object> (
               ))}
             </thead>
 
-            //  Table Body
+            
             <tbody {...getTableBodyProps()}>
                    {
                     rows.map((row) => {
