@@ -21,32 +21,32 @@
   
     "transaction": [
       {
-        "id": "ksdnfkjsdfx",
-        "amount": 4000,
-        "quantity": 4,
-        "discount": 300,
-        "status": "Processing"
+        "id": "ABC123",
+        "quantity": 5,
+        "discount": "10%",
+        "amount": 50,
+        "status": "shipped"
       },
       {
-        "id": "sdsdssdsd",
-        "amount": 5100,
+        "id": "DEF456",
+        "quantity": 3,
+        "discount": "5%",
+        "amount": 30,
+        "status": "processing"
+      },
+      {
+        "id": "GHI789",
+        "quantity": 8,
+        "discount": "15%",
+        "amount": 80,
+        "status": "shipped"
+      },
+      {
+        "id": "JKL012",
         "quantity": 2,
-        "discount": 900,
-        "status": "Processing"
-      },
-      {
-        "id": "sdsdcvsssdsd",
-        "amount": 13000,
-        "quantity": 91,
-        "discount": 0,
-        "status": "Shipped"
-      },
-      {
-        "id": "dfddddfd",
-        "amount": 2300,
-        "quantity": 4,
-        "discount": 2000,
-        "status": "Processing"
+        "discount": "20%",
+        "amount": 20,
+        "status": "processing"
       }
     ]
   }

@@ -3,7 +3,7 @@ import { FaSearch , FaBell} from "react-icons/fa";
 import userImg from '../assets/person.png'
 import { IoMdTrendingUp , IoMdTrendingDown} from "react-icons/io";
 import { BiMaleFemale } from "react-icons/bi";
-
+import Table from '../component/DashboardTable'
 import data from '../assets/data.json'
 import { BarChart, DoughnutChart } from "../component/Charts";
 import { Doughnut } from "react-chartjs-2";
@@ -117,7 +117,7 @@ const dashboard = () => {
             </div>
 
 
-            {/* Table  */}
+            <Table data = {data.transaction}/>
           </section>
          
           {/*------ Transaction section ends  here----  */}
