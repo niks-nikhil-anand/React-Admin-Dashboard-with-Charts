@@ -19,17 +19,13 @@
 }
 
 //Grid
-@mixin grid(
-     $col: 1fr ,
-     $row : unset,
-     $gap : 1rem,
-     
-     ){
+@mixin grid($col: 1fr, $gap: 1rem, $row: unset) {
     display: grid;
     grid-template-columns: $col;
     grid-template-rows: $row;
     gap: $gap;
-}
+  }
+
 
 // input style
 @mixin inputStyle(
@@ -50,7 +46,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,50%);
 }
 
 //square

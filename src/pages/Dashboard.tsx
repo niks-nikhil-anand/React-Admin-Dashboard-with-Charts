@@ -2,8 +2,12 @@ import AdminSideBar from "../component/AdminSideBar"
 import { FaSearch , FaBell} from "react-icons/fa";
 import userImg from '../assets/person.png'
 import { IoMdTrendingUp , IoMdTrendingDown} from "react-icons/io";
+import { BiMaleFemale } from "react-icons/bi";
+
 import data from '../assets/data.json'
-import { BarChart } from "../component/Charts";
+import { BarChart, DoughnutChart } from "../component/Charts";
+import { Doughnut } from "react-chartjs-2";
+
 
 
 const dashboard = () => {
@@ -61,6 +65,7 @@ const dashboard = () => {
 
 
           {/*------ Graph section starts from here----  */}
+          
 
           <section className="graphContainer">
              <div className="revenueCharts">
@@ -91,6 +96,31 @@ const dashboard = () => {
           </section>
 
           {/*------ Graph section ends here----  */}
+          {/*------ Transaction section starts from here----  */}
+          
+          <section className="transactionContainer">
+            <div className="genderChart">
+              <h2>Gender Ratio</h2>
+              {/* Charts  */}
+
+              <DoughnutChart
+              labels={["Male", "Female"]}
+              data={[12, 19]}
+              backgroundColor={["hsl(340, 82%, 56%)", "rgba(53, 162, 235, 0.8)"]}
+              cutout={90}
+            />
+
+
+              <p>
+              <BiMaleFemale />
+              </p>
+            </div>
+
+
+            {/* Table  */}
+          </section>
+         
+          {/*------ Transaction section ends  here----  */}
 
 
 
